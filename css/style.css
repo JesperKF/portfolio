@@ -1,35 +1,91 @@
+@font-face {
+  font-family: Darker;
+  src: url(../assets/DarkerGrotesque-VariableFont_wght.woff2);
+}
+
+header {
+  padding: 5px;
+}
+
 body,
 html {
   cursor: none;
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
+}
+
+h2 {
+  font-family: Darker;
+  font-size: 36px;
+}
+
+p {
+  font-family: Darker;
+  font-size: 18px;
 }
 
 .bg {
   height: 100vh;
-  background-image: url("../img/AdobeStock_219173642.jpeg");
+  background-image: url("../assets/AdobeStock_219173642.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo {
   position: absolute;
-  left: 540px;
+  left: 40%;
   top: 30px;
-}
-
-.button {
-  display: inline-block;
+  transform: translateX(-50%);
 }
 
 .button img {
-  width: 125px;
-  height: 112px;
+  width: 10vw;
+  height: auto;
   object-fit: cover;
-  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  padding-top: 10px;
+}
+
+.line-container {
+  display: flex;
+  margin-top: 100px;
+  width: 100%;
+  align-items: center;
+}
+
+.horizontal-line {
+  width: 800px;
+  flex-grow: 1;
+  height: 3px;
+  background-color: black;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+}
+
+a {
+  font-family: Darker;
+  text-decoration: none;
+  color: black;
+  font-size: 4vw;
 }
 
 #crosshair-h {
@@ -37,16 +93,18 @@ html {
   height: 1px;
   margin-top: 0;
   position: absolute;
-  z-index: 6000 !important;
+  z-index: 10000 !important;
 }
+
 #crosshair-v {
   height: 100vh;
   width: 1px;
   margin-left: 0;
   position: fixed;
   top: 0;
-  z-index: 6001 !important;
+  z-index: 10001 !important;
 }
+
 .hair {
   background-color: #fff;
   pointer-events: none;
@@ -63,7 +121,7 @@ html {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  z-index: 6002 !important;
+  z-index: 10002 !important;
   margin-top: -16px;
   margin-left: -16px;
   transition: all 0.05s ease;
@@ -78,6 +136,7 @@ html {
   width: 8em;
   margin-top: -5em;
   margin-left: -5em;
+  z-index: 10003;
 }
 
 @keyframes pulse {
@@ -101,46 +160,67 @@ html {
   }
 }
 
-.vertical-line {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 3px;
-  background-color: black;
-  transform: translateX(-50%);
+@media (max-width: 899px) {
+  .logo {
+    left: 40%;
+    top: 20px;
+    transform: translateX(-50%);
+  }
+  .horizontal-line {
+    width: 600px;
+  }
+  a {
+    font-size: 5vw;
+  }
+  .grid-container {
+    padding-top: 4300px;
+    gap: 10px; /* Adjust space between items */
+  }
+
+  .grid-item {
+    width: 100%; /* Full width for single-column layout */
+    flex-direction: row; /* Ensure items are side by side */
+  }
+
+  .grid-item-left {
+    margin-right: 10px; /* Reduce right margin */
+  }
+
+  .grid-item-right img {
+    max-width: 300px; /* Adjust size as needed */
+  }
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+@media (max-width: 599px) {
+  .logo {
+    left: 40%;
+    top: 20px;
+    transform: translateX(-50%);
+  }
 
-.container {
-  padding-top: 100px;
-}
+  .horizontal-line {
+    width: 200px;
+  }
+  a {
+    font-size: 6vw;
+  }
+  .grid-container {
+    padding-top: 4200px;
+    gap: 10px; /* Adjust space between items for smaller screens */
+  }
 
-.line-container {
-  display: flex;
-  align-items: center;
-  margin-top: 100px;
-}
+  .grid-item {
+    width: 100%; /* Full width for single-column layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the start */
+  }
 
-.horizontal-line {
-  width: 800px;
-  height: 3px;
-  background-color: black;
-  margin-right: 10px;
-}
+  .grid-item-left {
+    margin-right: 0;
+    margin-bottom: 20px; /* Add spacing between stacked items */
+  }
 
-li {
-  list-style: none;
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-  font-size: 64px;
+  .grid-item-right img {
+    max-width: 100%; /* Ensure image takes full width */
+  }
 }
