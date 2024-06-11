@@ -1,23 +1,22 @@
 header {
-  height: 80px; /* Adjust height as needed */
-  width: 100%; /* Make header span full width */
-  position: fixed; /* Fixed position to keep it at the top */
-  top: 0; /* Stick it to the top */
-  left: 0; /* Align to the left */
-  z-index: 1000; /* Ensure it's on top of other elements */
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 main:before {
   content: "";
   display: block;
-  height: 100px; /* Adjust value to ensure content starts below header */
+  height: 100px;
 }
 
-/* Grid container styling */
 .grid-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* Space between grid items */
+  gap: 20px;
   padding-top: 2200px;
   margin: 0;
   list-style: none;
@@ -27,20 +26,40 @@ main:before {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #ddd; /* Optional: border around grid items */
+  border: 1px solid #ddd;
   padding: 20px;
-  background-color: #f9f9f9; /* Optional: background color for grid items */
-  width: 100%; /* Adjust width or use flex properties to control layout */
+  background-color: #f9f9f9;
+  width: 100%;
 }
 
-/* Grid item left content */
 .grid-item-left {
   flex: 1;
   margin-right: 20px;
 }
 
-/* Grid item right content */
 .grid-item-right img {
-  max-width: 500px; /* Adjust size as needed */
+  max-width: 500px;
   height: auto;
+}
+
+.gridbox {
+  display: grid;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 1000px;
+}
+
+.grid_1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.col {
+  padding: 15px;
+}
+
+.ego {
+  width: 640px;
+  height: 990px;
+  display: block;
 }
